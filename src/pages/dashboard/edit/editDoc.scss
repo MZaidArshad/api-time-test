@@ -1,0 +1,379 @@
+.editDoc_body {
+  margin-top: 15px;
+  overflow-x: hidden !important;
+
+  .editForm_container {
+    max-height: 76vh;
+    overflow-y: auto;
+    border-radius: 7px !important;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: gray;
+      border-radius: 20px;
+    }
+  }
+
+  .uploadAndSelectedImageContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    .selectedDoc_img_container {
+      height: 450px;
+      min-width: 200px !important;
+      max-width: 100% !important;
+      flex: 1;
+      border: 4px solid gray;
+      padding: 3px;
+      border-radius: 8px;
+      position: relative;
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 8px;
+      }
+
+      .doc_scanning_overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 10px;
+        border-radius: 7px;
+        p {
+          color: #ffff;
+          margin-bottom: 5px;
+        }
+      }
+    }
+    .selectedDoc_img_uploading_container {
+      min-width: 100%;
+      height: 450px;
+      border: 4px solid gray;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        color: gray;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .uploadFileAndDocuments_container {
+    max-height: 90vh !important;
+    max-width: 180px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: gray;
+      border-radius: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .editDoc_body {
+    padding: 20px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .editDoc_body {
+    .row {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .uploadAndSelectedImageContainer {
+    .selectedDoc_img_container {
+      height: 400px !important;
+    }
+  }
+  .selectedDoc_img_uploading_container {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .uploadFileAndDocuments_container {
+    height: 400px !important;
+    max-width: 120px !important;
+    overflow-x: auto !important;
+  }
+}
+
+/* Custom styles for the modal and overlay */
+/* Custom modal styles */
+.upload-modal {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 90%;
+  background: #323238;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+/* Header styling */
+.upload-modal h2 {
+  font-size: 1.5rem;
+  color: #1492d8;
+  margin-bottom: 15px;
+}
+.upload_header {
+  width: 100%;
+  text-align: center;
+  .upload_stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    color: #ffff;
+    span {
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    .success {
+      background-color: rgb(0, 113, 0);
+    }
+    .failed {
+      background-color: #8b1f1f;
+    }
+  }
+}
+
+/* File upload info container */
+.file-upload-info {
+  width: 100% !important;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(46, 46, 46, 0.05);
+  color: #e0e0e0;
+}
+
+.file-upload-info span {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.uploading_container,
+.processing_container {
+  max-height: 280px !important;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.processed_msg {
+  text-align: center;
+  color: #ffff !important;
+  margin: 40px 0 !important;
+}
+
+.uploading_container::-webkit-scrollbar,
+.processing_container::-webkit-scrollbar {
+  width: 7px;
+}
+.uploading_container::-webkit-scrollbar-thumb,
+.processing_container::-webkit-scrollbar-thumb {
+  width: 7px;
+  border-radius: 10px;
+  background-color: gray;
+}
+
+/* Progress bar styling */
+.progress-bar {
+  position: relative;
+  height: 8px;
+  width: 80%;
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  span {
+    color: #1492d8;
+  }
+
+  .spinner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    span {
+      animation: rotate1 1s infinite !important;
+    }
+  }
+}
+
+@keyframes rotate1 {
+  from {
+    transform: rotate(0deg) !important;
+  }
+  to {
+    transform: rotate(360deg) !important;
+  }
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1075ab, #24acf6);
+  transition: width 0.3s;
+  border-radius: 5px;
+}
+
+/* Retry and other buttons */
+button {
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.retry-button {
+  background-color: #ff8a65;
+  color: #fff;
+}
+
+.modal_actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  .process-files-button {
+    background-color: #1492d8;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    margin-top: 15px;
+    flex: 1;
+    &:hover {
+      background-color: #0f72a8;
+    }
+  }
+
+  .close-button {
+    background-color: #ad2727;
+    color: #ffff;
+    margin-top: 10px;
+    padding: 8px;
+    &:hover {
+      background-color: #8b1f1f;
+    }
+  }
+}
+/* Main Table */
+.table {
+  width: 100%;
+  overflow-x: auto;
+}
+table {
+  width: 100vw;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  overflow-x: auto;
+}
+
+/* Header Styles */
+table thead th {
+  background-color: var(--primary);
+  color: white;
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Row and Cell Styles */
+table tbody tr {
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+table tbody td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+
+/* Sub-table Styling */
+table tbody td table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  background-color: #fafafa;
+}
+
+table tbody td table th {
+  background-color: #6c757d;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px;
+  text-align: left;
+}
+
+table tbody td table td {
+  padding: 4px;
+  font-size: 12px;
+  border: 1px solid #ddd;
+}
+
+/* Alternate Row Color for Sub-tables */
+table tbody td table tr:nth-child(even) {
+  background-color: #eee;
+}
+
+/* Table Borders */
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+table thead th,
+table tbody td {
+  text-align: left;
+}

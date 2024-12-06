@@ -1,0 +1,18 @@
+.simpleHeader {
+  background-color: #212529;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 7px;
+  color: #ffff;
+}
+
+@media screen and (max-width: 1000px) {
+  .simpleHeader {
+    h3 {
+      padding-left: 25px !important;
+    }
+  }
+}

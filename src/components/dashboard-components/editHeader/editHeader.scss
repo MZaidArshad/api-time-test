@@ -1,0 +1,62 @@
+.editHeader {
+  background-color: #212529;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 7px;
+  color: #ffff;
+  flex-wrap: wrap !important;
+
+  .title_input {
+    background-color: transparent;
+    border: none;
+    color: #ffff;
+    padding: 5px 10px;
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  .header_functions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .header_functions_language {
+      select {
+        color: white;
+        option {
+          background-color: #fff;
+          color: #000;
+        }
+      }
+    }
+    .header_functions_export {
+      .btn {
+        color: #ffff;
+        display: flex;
+        align-items: center !important;
+        gap: 5px;
+        .MuiSvgIcon-root {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .editHeader {
+    padding-left: 50px;
+  }
+}

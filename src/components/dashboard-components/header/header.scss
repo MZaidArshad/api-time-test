@@ -1,0 +1,42 @@
+.header {
+  background-color: #212529;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px 10px 25px;
+  border-radius: 7px;
+
+  .months_select {
+    width: 200px;
+  }
+
+  .MuiInputBase-root {
+    background-color: transparent;
+    width: 100%;
+    font-size: 20px !important;
+    color: #ffff;
+  }
+
+  .MuiFormLabel-root,
+  .MuiFormControl-root,
+  .MuiOutlinedInput-root,
+  .MuiSelect-outlined,
+  .MuiOutlinedInput-input {
+    color: #ffff !important;
+    border-color: #ffff !important;
+    outline-color: #ffff !important;
+    padding: 5px 2px !important;
+  }
+  .MuiFormControl-root {
+    padding: 0 !important;
+  }
+
+  .header_btns {
+    .header_btns_btn {
+      color: #ffff;
+      border: 1px solid #ffff;
+    }
+    margin-right: 15px;
+  }
+}

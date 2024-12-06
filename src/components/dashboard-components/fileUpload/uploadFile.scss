@@ -1,0 +1,47 @@
+.uploadFile {
+  // min-height: 300px !important;
+  height: 100% !important;
+  width: 100% !important;
+
+  div {
+    color: #ffff !important;
+  }
+  .files-ui-dropzone-children-container {
+    height: 60vh !important;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  .files-ui-dropzone-children-container::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .files-ui-dropzone-children-container::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+  }
+
+  button {
+    margin-top: 15px;
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+  }
+
+  button:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+
+  .loadingImg {
+    width: 164px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .uploadFile {
+    height: 80% !important;
+    .files-ui-dropzone-children-container {
+      height: 200px !important;
+    }
+  }
+}
